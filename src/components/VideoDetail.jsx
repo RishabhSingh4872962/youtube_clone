@@ -24,7 +24,7 @@ const VideoDetail = () => {
     snippet: { title, channelId, channelTitle },
     statistics: { likeCount, viewCount },
   } = video;
-console.log(`https://www.youtube.com/watch?v=${id}`);
+//console.log(`https://www.youtube.com/watch?v=${id}`);
   return (
     <Box minHeight="95vh">
       <Stack direction={{ xs: "column", md: "row" }}>
