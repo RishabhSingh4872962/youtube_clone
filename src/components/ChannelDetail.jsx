@@ -8,9 +8,8 @@ const ChannelDetail = () => {
   const [channel, setchannel] = useState();
   const [channelVideos, setchannelVideos] = useState([]);
 
-  console.log(channel,channelVideos);
+ 
   useEffect(() => {
-    console.log("in");
     fetchFromAPI(`channels?part=snippet&id=${id}`).then((data) =>
       setchannel(data?.items[0])
     );
