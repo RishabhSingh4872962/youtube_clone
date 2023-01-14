@@ -4,10 +4,20 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
+  const [searchQuery, setsearchQuery] = useState("")
+const navigate=useNavigate()
+
+const handleSubmit=(e)=>{
+  e.preventDefault()
+  if (searchQuery) {
+    navigate(`/search/${searchQuery}`)
+    setsearchQuery('')
+  }
+}
   return (
     <Paper
       component="form"
-      onSubmit={() => {}}
+      onSubmit={handleSubmit}
       sx={{
         borderRadius: 20,
         pl: 2,
@@ -19,11 +29,11 @@ const SearchBar = () => {
       <input
         className="search-bar"
         placeholder="search..."
-        // value=''
-        //onChange={()=>{}}
+         value={searchQuery}
+         onChange={(event)=>setsearchQuery(event.target.value)}
       />
       <IconButton type="submit" sx={{ p: "10px", color: "red" }}>
-        <Search />
+        <Search  />
       </IconButton>
     </Paper>
   );
